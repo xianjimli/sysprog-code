@@ -9,7 +9,7 @@ const char* strtrim(char* str)
 
 	p = str + strlen(str) - 1;
 
-	while(p != str && isspace(*p)) 
+	while(p != str && isspace(*p))
 	{
 		*p = '\0';
 		p--;
@@ -40,7 +40,7 @@ static void ini_parse_internal(char* buffer, char comment_char, char delim_char)
 	char* group_start = NULL;
 	char* key_start   = NULL;
 	char* value_start = NULL;
-	
+
 	enum _State
 	{
 		STAT_NONE = 0,

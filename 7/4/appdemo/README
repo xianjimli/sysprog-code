@@ -1,1 +1,4 @@
 demo for automake
+
+run `./autogen.sh` first, and then `./configure && make`
+

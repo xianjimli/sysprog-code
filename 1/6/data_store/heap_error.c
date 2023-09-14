@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include <string.h>
-/*# valgrind --tool=memcheck --leak-check=full ./heap_error */
+/*# valgrind --tool=memcheck --leak-check=full ./heap_error_test */
 int main(int argc, char* argv[])
 {
 	/*memory leak and buffer overflow.*/
