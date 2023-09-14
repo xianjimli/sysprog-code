@@ -77,7 +77,7 @@ size_t   stack_length(Stack* thiz)
 {
 	return_val_if_fail(thiz != NULL, 0);
 
-	return dlist_length(thiz->dlist);	
+	return dlist_length(thiz->dlist);
 }
 
 Ret      stack_foreach(Stack* thiz, DataVisitFunc visit, void* ctx)
@@ -108,7 +108,7 @@ int main(int argc, char* argv[])
 	int i = 0;
 	int n = 1000;
 	int ret_data = 0;
-	Stack* stack = stack_create(NULL, NULL);		
+	Stack* stack = stack_create(NULL, NULL);
 
 	for(i = 0; i < n; i++)
 	{

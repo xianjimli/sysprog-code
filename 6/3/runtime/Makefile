@@ -6,7 +6,7 @@ all:
 	gcc -Wall -g queue.c linear_container_dlist.c dlist.c -DQUEUE_TEST -o queue_test
 	gcc -Wall -g module_linux.c module_test.c -ldl -o module_test
 	gcc -Wall -g module_linux.c queue.c queue_test.c -ldl -o queue_dynamic_test
-	gcc -g call_cos.c -ldl -o call_cos
+	gcc -g call_cos.c -ldl -o call_cos_test
 
 clean:
 	rm *test *.so

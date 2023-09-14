@@ -77,7 +77,7 @@ size_t   queue_length(Queue* thiz)
 {
 	return_val_if_fail(thiz != NULL, 0);
 
-	return dlist_length(thiz->dlist);	
+	return dlist_length(thiz->dlist);
 }
 
 Ret      queue_foreach(Queue* thiz, DataVisitFunc visit, void* ctx)
@@ -107,7 +107,7 @@ int main(int argc, char* argv[])
 	int i = 0;
 	int n = 1000;
 	int ret_data = 0;
-	Queue* queue = queue_create(NULL, NULL);		
+	Queue* queue = queue_create(NULL, NULL);
 
 	for(i = 0; i < n; i++)
 	{

@@ -103,8 +103,8 @@ DList* dlist_create(DataDestroyFunc data_destroy, void* ctx)
 static DListNode* dlist_get_node(DList* thiz, size_t index, int fail_return_last)
 {
 	DListNode* iter = NULL;
-	
-	return_val_if_fail(thiz != NULL, NULL); 
+
+	return_val_if_fail(thiz != NULL, NULL);
 
 	iter = thiz->first;
 
@@ -128,7 +128,7 @@ Ret dlist_insert(DList* thiz, size_t index, void* data)
 	DListNode* node = NULL;
 	DListNode* cursor = NULL;
 
-	return_val_if_fail(thiz != NULL, RET_INVALID_PARAMS); 
+	return_val_if_fail(thiz != NULL, RET_INVALID_PARAMS);
 
 
 	do
@@ -146,7 +146,7 @@ Ret dlist_insert(DList* thiz, size_t index, void* data)
 		}
 
 		cursor = dlist_get_node(thiz, index, 1);
-		
+
 		if(index < dlist_length(thiz))
 		{
 			node->next = cursor;
@@ -185,8 +185,8 @@ Ret dlist_delete(DList* thiz, size_t index)
 	Ret ret = RET_OK;
 	DListNode* cursor = NULL;
 
-	return_val_if_fail(thiz != NULL, RET_INVALID_PARAMS); 
-	
+	return_val_if_fail(thiz != NULL, RET_INVALID_PARAMS);
+
 	cursor = dlist_get_node(thiz, index, 0);
 
 	do
@@ -226,7 +226,7 @@ Ret dlist_get_by_index(DList* thiz, size_t index, void** data)
 {
 	DListNode* cursor = NULL;
 
-	return_val_if_fail(thiz != NULL && data != NULL, RET_INVALID_PARAMS); 
+	return_val_if_fail(thiz != NULL && data != NULL, RET_INVALID_PARAMS);
 
 	cursor = dlist_get_node(thiz, index, 0);
 
@@ -244,7 +244,7 @@ Ret dlist_set_by_index(DList* thiz, size_t index, void* data)
 
 	return_val_if_fail(thiz != NULL, RET_INVALID_PARAMS);
 
-	
+
 	cursor = dlist_get_node(thiz, index, 0);
 
 	if(cursor != NULL)
@@ -277,7 +277,7 @@ Ret dlist_foreach(DList* thiz, DataVisitFunc visit, void* ctx)
 {
 	Ret ret = RET_OK;
 	DListNode* iter = NULL;
-	
+
 	return_val_if_fail(thiz != NULL && visit != NULL, RET_INVALID_PARAMS);
 
 	iter = thiz->first;
@@ -317,7 +317,7 @@ void dlist_destroy(DList* thiz)
 {
 	DListNode* iter = NULL;
 	DListNode* next = NULL;
-	
+
 	return_if_fail(thiz != NULL);
 
 	iter = thiz->first;
@@ -329,7 +329,7 @@ void dlist_destroy(DList* thiz)
 	}
 
 	thiz->first = NULL;
-	
+
 	SAFE_FREE(thiz);
 
 	return;
@@ -395,7 +395,7 @@ static void test_int_dlist(void)
 			assert((int)data == (i+1));
 		}
 	}
-	
+
 	assert(dlist_length(dlist) == 0);
 
 	for(i = 0; i < n; i++)

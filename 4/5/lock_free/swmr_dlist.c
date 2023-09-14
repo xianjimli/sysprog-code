@@ -29,6 +29,7 @@
  *
  */
 
+#include <unistd.h>
 #include "dlist.h"
 #include "iatomic.h"
 
